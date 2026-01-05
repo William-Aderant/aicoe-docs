@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Users/william.holden/Documents/GitHub/aicoe-docs/lib/layout.shared.tsx"],"sourcesContent":["import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';\n\nexport function baseOptions(): BaseLayoutProps {\n  return {\n    nav: {\n      title: 'AI CoE Docs',\n    },\n  };\n}\n"],"names":[],"mappings":";;;;AAEO,SAAS;IACd,OAAO;QACL,KAAK;YACH,OAAO;QACT;IACF;AACF"}},
+    {"offset": {"line": 19, "column": 0}, "map": {"version":3,"sources":["file:///Users/william.holden/Documents/GitHub/aicoe-docs/app/%28home%29/layout.tsx"],"sourcesContent":["import { HomeLayout } from 'fumadocs-ui/layouts/home';\nimport { baseOptions } from '@/lib/layout.shared';\n\nexport default function Layout({ children }: LayoutProps<'/'>) {\n  return <HomeLayout {...baseOptions()}>{children}</HomeLayout>;\n}\n"],"names":[],"mappings":";;;;;AAAA;AACA;;;;AAEe,SAAS,OAAO,EAAE,QAAQ,EAAoB;IAC3D,qBAAO,8OAAC,gLAAU;QAAE,GAAG,IAAA,uIAAW,GAAE;kBAAG;;;;;;AACzC"}}]
+}

@@ -1,0 +1,31 @@
+---
+title: Fine-tuning
+category: Training
+description: The process of adapting a pre-trained model to a specific task or dataset
+relatedTerms:
+  - machine-learning
+  - neural-network
+  - transformer
+---
+
+Fine-tuning is a transfer learning technique where a pre-trained model is further trained on a smaller, task-specific dataset. This approach leverages knowledge learned from large-scale training and adapts it to specific use cases.
+
+## Process
+
+1. **Start with Pre-trained Model**: Begin with a model trained on a large, general dataset
+2. **Task-Specific Data**: Prepare a smaller dataset relevant to your specific task
+3. **Selective Training**: Update model parameters (often only the final layers)
+4. **Validation**: Test the fine-tuned model on held-out data
+
+## Benefits
+
+- **Efficiency**: Requires less data and computational resources than training from scratch
+- **Performance**: Often achieves better results than training on limited data alone
+- **Speed**: Faster to deploy than building new models
+
+## Common Approaches
+
+- **Full Fine-tuning**: Updates all model parameters
+- **Parameter-Efficient Fine-tuning**: Updates only a subset of parameters (e.g., LoRA, Adapters)
+- **Few-shot Learning**: Fine-tuning with very limited examples
+

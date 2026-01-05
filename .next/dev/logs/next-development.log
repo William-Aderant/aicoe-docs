@@ -1,0 +1,335 @@
+[00:00:01.325] Server  LOG     [MDX] generated files in 6.119792000000189ms
+[00:00:01.330] Server  LOG     [MDX] started dev server
+[00:00:01.411] Server  LOG     ✓ Ready in 1260ms
+[00:00:09.396] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:16.804] Server  WARN    ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+[00:02:10.469] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:14.050] Server  ERROR   Only plain objects can be passed to Client Components from Server Components. Module objects are not supported.
+  {body: ..., toc: ..., structuredData: ..., _exports: Module, extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: ...}
+                                                       ^^^^^^
+[00:02:14.052] Server  ERROR   Only plain objects can be passed to Client Components from Server Components. Module objects are not supported.
+  {body: ..., toc: ..., structuredData: ..., _exports: Module, extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: ...}
+                                                       ^^^^^^
+[00:02:14.053] Server  ERROR   Only plain objects can be passed to Client Components from Server Components. Module objects are not supported.
+  {body: ..., toc: ..., structuredData: ..., _exports: Module, extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: ...}
+                                                       ^^^^^^
+[00:02:14.054] Server  ERROR   Only plain objects can be passed to Client Components from Server Components. Module objects are not supported.
+  {body: ..., toc: ..., structuredData: ..., _exports: Module, extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: ...}
+                                                       ^^^^^^
+[00:02:14.055] Server  ERROR   Only plain objects can be passed to Client Components from Server Components. Module objects are not supported.
+  {body: ..., toc: ..., structuredData: ..., _exports: Module, extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: ...}
+                                                       ^^^^^^
+[00:02:14.057] Server  ERROR   Only plain objects can be passed to Client Components from Server Components. Module objects are not supported.
+  {body: ..., toc: ..., structuredData: ..., _exports: Module, extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: ...}
+                                                       ^^^^^^
+[00:02:14.182] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: function MDXContent, toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: ...}
+         ^^^^^^^^^^^^^^^^^^^
+[00:02:14.275] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.Module
+[00:02:14.347] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: ..., toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: function getText, getMDAST: ...}
+                                                                                                                                        ^^^^^^^^^^^^^^^^
+[00:02:14.446] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: ..., toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: function getMDAST}
+                                                                                                                                                       ^^^^^^^^^^^^^^^^^
+[00:02:14.520] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: function MDXContent, toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: ...}
+         ^^^^^^^^^^^^^^^^^^^
+[00:02:14.596] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.Module
+[00:02:14.676] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: ..., toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: function getText, getMDAST: ...}
+                                                                                                                                        ^^^^^^^^^^^^^^^^
+[00:02:14.759] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: ..., toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: function getMDAST}
+                                                                                                                                                       ^^^^^^^^^^^^^^^^^
+[00:02:14.843] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: function MDXContent, toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: ...}
+         ^^^^^^^^^^^^^^^^^^^
+[00:02:14.929] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.Module
+[00:02:15.004] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: ..., toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: function getText, getMDAST: ...}
+                                                                                                                                        ^^^^^^^^^^^^^^^^
+[00:02:15.101] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: ..., toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: function getMDAST}
+                                                                                                                                                       ^^^^^^^^^^^^^^^^^
+[00:02:15.186] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: function MDXContent, toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: ...}
+         ^^^^^^^^^^^^^^^^^^^
+[00:02:15.271] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.Module
+[00:02:15.345] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: ..., toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: function getText, getMDAST: ...}
+                                                                                                                                        ^^^^^^^^^^^^^^^^
+[00:02:15.426] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: ..., toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: function getMDAST}
+                                                                                                                                                       ^^^^^^^^^^^^^^^^^
+[00:02:15.510] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: function MDXContent, toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: ...}
+         ^^^^^^^^^^^^^^^^^^^
+[00:02:15.587] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.Module
+[00:02:15.669] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: ..., toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: function getText, getMDAST: ...}
+                                                                                                                                        ^^^^^^^^^^^^^^^^
+[00:02:15.753] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: ..., toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: function getMDAST}
+                                                                                                                                                       ^^^^^^^^^^^^^^^^^
+[00:02:15.838] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: function MDXContent, toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: ...}
+         ^^^^^^^^^^^^^^^^^^^
+[00:02:15.913] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.Module
+[00:02:15.996] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: ..., toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: function getText, getMDAST: ...}
+                                                                                                                                        ^^^^^^^^^^^^^^^^
+[00:02:16.080] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: ..., toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: function getMDAST}
+                                                                                                                                                       ^^^^^^^^^^^^^^^^^
+[00:02:27.177] Server  ERROR   Only plain objects can be passed to Client Components from Server Components. Module objects are not supported.
+  {body: ..., toc: ..., structuredData: ..., _exports: Module, extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: ...}
+                                                       ^^^^^^
+[00:02:27.179] Server  ERROR   Only plain objects can be passed to Client Components from Server Components. Module objects are not supported.
+  {body: ..., toc: ..., structuredData: ..., _exports: Module, extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: ...}
+                                                       ^^^^^^
+[00:02:27.181] Server  ERROR   Only plain objects can be passed to Client Components from Server Components. Module objects are not supported.
+  {body: ..., toc: ..., structuredData: ..., _exports: Module, extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: ...}
+                                                       ^^^^^^
+[00:02:27.183] Server  ERROR   Only plain objects can be passed to Client Components from Server Components. Module objects are not supported.
+  {body: ..., toc: ..., structuredData: ..., _exports: Module, extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: ...}
+                                                       ^^^^^^
+[00:02:27.185] Server  ERROR   Only plain objects can be passed to Client Components from Server Components. Module objects are not supported.
+  {body: ..., toc: ..., structuredData: ..., _exports: Module, extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: ...}
+                                                       ^^^^^^
+[00:02:27.187] Server  ERROR   Only plain objects can be passed to Client Components from Server Components. Module objects are not supported.
+  {body: ..., toc: ..., structuredData: ..., _exports: Module, extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: ...}
+                                                       ^^^^^^
+[00:02:27.278] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: function MDXContent, toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: ...}
+         ^^^^^^^^^^^^^^^^^^^
+[00:02:27.355] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.Module
+[00:02:27.435] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: ..., toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: function getText, getMDAST: ...}
+                                                                                                                                        ^^^^^^^^^^^^^^^^
+[00:02:27.526] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: ..., toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: function getMDAST}
+                                                                                                                                                       ^^^^^^^^^^^^^^^^^
+[00:02:27.603] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: function MDXContent, toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: ...}
+         ^^^^^^^^^^^^^^^^^^^
+[00:02:27.675] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.Module
+[00:02:27.751] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: ..., toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: function getText, getMDAST: ...}
+                                                                                                                                        ^^^^^^^^^^^^^^^^
+[00:02:27.834] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: ..., toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: function getMDAST}
+                                                                                                                                                       ^^^^^^^^^^^^^^^^^
+[00:02:27.912] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: function MDXContent, toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: ...}
+         ^^^^^^^^^^^^^^^^^^^
+[00:02:27.993] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.Module
+[00:02:28.063] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: ..., toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: function getText, getMDAST: ...}
+                                                                                                                                        ^^^^^^^^^^^^^^^^
+[00:02:28.143] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: ..., toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: function getMDAST}
+                                                                                                                                                       ^^^^^^^^^^^^^^^^^
+[00:02:28.222] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: function MDXContent, toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: ...}
+         ^^^^^^^^^^^^^^^^^^^
+[00:02:28.291] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.Module
+[00:02:28.370] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: ..., toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: function getText, getMDAST: ...}
+                                                                                                                                        ^^^^^^^^^^^^^^^^
+[00:02:28.451] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: ..., toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: function getMDAST}
+                                                                                                                                                       ^^^^^^^^^^^^^^^^^
+[00:02:28.529] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: function MDXContent, toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: ...}
+         ^^^^^^^^^^^^^^^^^^^
+[00:02:28.600] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.Module
+[00:02:28.678] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: ..., toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: function getText, getMDAST: ...}
+                                                                                                                                        ^^^^^^^^^^^^^^^^
+[00:02:28.756] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: ..., toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: function getMDAST}
+                                                                                                                                                       ^^^^^^^^^^^^^^^^^
+[00:02:28.836] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: function MDXContent, toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: ...}
+         ^^^^^^^^^^^^^^^^^^^
+[00:02:28.906] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.Module
+[00:02:28.987] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: ..., toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: function getText, getMDAST: ...}
+                                                                                                                                        ^^^^^^^^^^^^^^^^
+[00:02:29.087] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: ..., toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: function getMDAST}
+                                                                                                                                                       ^^^^^^^^^^^^^^^^^
+[00:02:29.214] Browser ERROR   uncaughtError: Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: function MDXContent, toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: ...}
+         ^^^^^^^^^^^^^^^^^^^
+[00:02:36.715] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:41.279] Server  ERROR   Only plain objects can be passed to Client Components from Server Components. Module objects are not supported.
+  {body: ..., toc: ..., structuredData: ..., _exports: Module, extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: ...}
+                                                       ^^^^^^
+[00:02:41.281] Server  ERROR   Only plain objects can be passed to Client Components from Server Components. Module objects are not supported.
+  {body: ..., toc: ..., structuredData: ..., _exports: Module, extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: ...}
+                                                       ^^^^^^
+[00:02:41.282] Server  ERROR   Only plain objects can be passed to Client Components from Server Components. Module objects are not supported.
+  {body: ..., toc: ..., structuredData: ..., _exports: Module, extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: ...}
+                                                       ^^^^^^
+[00:02:41.283] Server  ERROR   Only plain objects can be passed to Client Components from Server Components. Module objects are not supported.
+  {body: ..., toc: ..., structuredData: ..., _exports: Module, extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: ...}
+                                                       ^^^^^^
+[00:02:41.284] Server  ERROR   Only plain objects can be passed to Client Components from Server Components. Module objects are not supported.
+  {body: ..., toc: ..., structuredData: ..., _exports: Module, extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: ...}
+                                                       ^^^^^^
+[00:02:41.286] Server  ERROR   Only plain objects can be passed to Client Components from Server Components. Module objects are not supported.
+  {body: ..., toc: ..., structuredData: ..., _exports: Module, extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: ...}
+                                                       ^^^^^^
+[00:02:41.374] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: function MDXContent, toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: ...}
+         ^^^^^^^^^^^^^^^^^^^
+[00:02:41.454] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.Module
+[00:02:41.525] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: ..., toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: function getText, getMDAST: ...}
+                                                                                                                                        ^^^^^^^^^^^^^^^^
+[00:02:41.619] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: ..., toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: function getMDAST}
+                                                                                                                                                       ^^^^^^^^^^^^^^^^^
+[00:02:41.688] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: function MDXContent, toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: ...}
+         ^^^^^^^^^^^^^^^^^^^
+[00:02:41.766] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.Module
+[00:02:41.849] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: ..., toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: function getText, getMDAST: ...}
+                                                                                                                                        ^^^^^^^^^^^^^^^^
+[00:02:41.927] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: ..., toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: function getMDAST}
+                                                                                                                                                       ^^^^^^^^^^^^^^^^^
+[00:02:42.008] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: function MDXContent, toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: ...}
+         ^^^^^^^^^^^^^^^^^^^
+[00:02:42.088] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.Module
+[00:02:42.187] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: ..., toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: function getText, getMDAST: ...}
+                                                                                                                                        ^^^^^^^^^^^^^^^^
+[00:02:42.259] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: ..., toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: function getMDAST}
+                                                                                                                                                       ^^^^^^^^^^^^^^^^^
+[00:02:42.337] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: function MDXContent, toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: ...}
+         ^^^^^^^^^^^^^^^^^^^
+[00:02:42.415] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.Module
+[00:02:42.494] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: ..., toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: function getText, getMDAST: ...}
+                                                                                                                                        ^^^^^^^^^^^^^^^^
+[00:02:42.566] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: ..., toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: function getMDAST}
+                                                                                                                                                       ^^^^^^^^^^^^^^^^^
+[00:02:42.648] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: function MDXContent, toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: ...}
+         ^^^^^^^^^^^^^^^^^^^
+[00:02:42.727] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.Module
+[00:02:42.812] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: ..., toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: function getText, getMDAST: ...}
+                                                                                                                                        ^^^^^^^^^^^^^^^^
+[00:02:42.883] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: ..., toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: function getMDAST}
+                                                                                                                                                       ^^^^^^^^^^^^^^^^^
+[00:02:42.963] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: function MDXContent, toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: ...}
+         ^^^^^^^^^^^^^^^^^^^
+[00:02:43.046] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.Module
+[00:02:43.125] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: ..., toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: function getText, getMDAST: ...}
+                                                                                                                                        ^^^^^^^^^^^^^^^^
+[00:02:43.198] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: ..., toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: function getMDAST}
+                                                                                                                                                       ^^^^^^^^^^^^^^^^^
+[00:02:43.323] Browser ERROR   uncaughtError: Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: function MDXContent, toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: ...}
+         ^^^^^^^^^^^^^^^^^^^
+[00:03:42.709] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:03:42.709] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./lib/glossary.ts changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:03:42.712] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:03:42.824] Server  ERROR   Only plain objects can be passed to Client Components from Server Components. Module objects are not supported.
+  {body: ..., toc: ..., structuredData: ..., _exports: Module, extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: ...}
+                                                       ^^^^^^
+[00:03:42.826] Server  ERROR   Only plain objects can be passed to Client Components from Server Components. Module objects are not supported.
+  {body: ..., toc: ..., structuredData: ..., _exports: Module, extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: ...}
+                                                       ^^^^^^
+[00:03:42.827] Server  ERROR   Only plain objects can be passed to Client Components from Server Components. Module objects are not supported.
+  {body: ..., toc: ..., structuredData: ..., _exports: Module, extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: ...}
+                                                       ^^^^^^
+[00:03:42.828] Server  ERROR   Only plain objects can be passed to Client Components from Server Components. Module objects are not supported.
+  {body: ..., toc: ..., structuredData: ..., _exports: Module, extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: ...}
+                                                       ^^^^^^
+[00:03:42.829] Server  ERROR   Only plain objects can be passed to Client Components from Server Components. Module objects are not supported.
+  {body: ..., toc: ..., structuredData: ..., _exports: Module, extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: ...}
+                                                       ^^^^^^
+[00:03:42.830] Server  ERROR   Only plain objects can be passed to Client Components from Server Components. Module objects are not supported.
+  {body: ..., toc: ..., structuredData: ..., _exports: Module, extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: ...}
+                                                       ^^^^^^
+[00:03:42.924] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: function MDXContent, toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: ...}
+         ^^^^^^^^^^^^^^^^^^^
+[00:03:43.013] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.Module
+[00:03:43.088] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: ..., toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: function getText, getMDAST: ...}
+                                                                                                                                        ^^^^^^^^^^^^^^^^
+[00:03:43.172] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: ..., toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: function getMDAST}
+                                                                                                                                                       ^^^^^^^^^^^^^^^^^
+[00:03:43.260] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: function MDXContent, toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: ...}
+         ^^^^^^^^^^^^^^^^^^^
+[00:03:43.340] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.Module
+[00:03:43.422] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: ..., toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: function getText, getMDAST: ...}
+                                                                                                                                        ^^^^^^^^^^^^^^^^
+[00:03:43.501] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: ..., toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: function getMDAST}
+                                                                                                                                                       ^^^^^^^^^^^^^^^^^
+[00:03:43.591] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: function MDXContent, toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: ...}
+         ^^^^^^^^^^^^^^^^^^^
+[00:03:43.665] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.Module
+[00:03:43.744] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: ..., toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: function getText, getMDAST: ...}
+                                                                                                                                        ^^^^^^^^^^^^^^^^
+[00:03:43.828] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: ..., toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: function getMDAST}
+                                                                                                                                                       ^^^^^^^^^^^^^^^^^
+[00:03:43.929] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: function MDXContent, toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: ...}
+         ^^^^^^^^^^^^^^^^^^^
+[00:03:44.001] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.Module
+[00:03:44.085] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: ..., toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: function getText, getMDAST: ...}
+                                                                                                                                        ^^^^^^^^^^^^^^^^
+[00:03:44.166] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: ..., toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: function getMDAST}
+                                                                                                                                                       ^^^^^^^^^^^^^^^^^
+[00:03:44.244] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: function MDXContent, toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: ...}
+         ^^^^^^^^^^^^^^^^^^^
+[00:03:44.318] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.Module
+[00:03:44.425] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: ..., toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: function getText, getMDAST: ...}
+                                                                                                                                        ^^^^^^^^^^^^^^^^
+[00:03:44.499] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: ..., toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: function getMDAST}
+                                                                                                                                                       ^^^^^^^^^^^^^^^^^
+[00:03:44.572] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: function MDXContent, toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: ...}
+         ^^^^^^^^^^^^^^^^^^^
+[00:03:44.659] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.Module
+[00:03:44.743] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: ..., toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: function getText, getMDAST: ...}
+                                                                                                                                        ^^^^^^^^^^^^^^^^
+[00:03:44.833] Server  ERROR   ⨯ Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: ..., toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: function getMDAST}
+                                                                                                                                                       ^^^^^^^^^^^^^^^^^
+[00:03:44.951] Server  LOG     ✓ Compiled in 45ms
+[00:03:45.016] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:45.160] Browser ERROR   uncaughtError: Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server". Or maybe you meant to call this function rather than return it.
+  {body: function MDXContent, toc: ..., structuredData: ..., _exports: ..., extractedReferences: ..., title: ..., description: ..., info: ..., getText: ..., getMDAST: ...}
+         ^^^^^^^^^^^^^^^^^^^
+[00:04:02.839] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:04:06.699] Server  WARN    ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
