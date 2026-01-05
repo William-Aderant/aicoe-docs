@@ -2,17 +2,19 @@
 
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
-import { filterTermsByCategory, searchTerms, groupTermsAlphabetically, getAvailableLetters, type GlossaryTermData, type GlossaryCategory } from '@/lib/glossary';
+import { filterTermsByCategory, filterTermsByProject, searchTerms, groupTermsAlphabetically, getAvailableLetters, getGlossaryProjects, type GlossaryTermData, type GlossaryCategory } from '@/lib/glossary';
 import { Search, Filter } from 'lucide-react';
 
 interface GlossaryClientProps {
   initialTerms: GlossaryTermData[];
   initialCategories: GlossaryCategory[];
+  initialProjects: { name: string; slug: string; count: number }[];
 }
 
-export default function GlossaryClient({ initialTerms, initialCategories }: GlossaryClientProps) {
+export default function GlossaryClient({ initialTerms, initialCategories, initialProjects }: GlossaryClientProps) {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
+  const [selectedProject, setSelectedProject] = useState<string>('All');
   const [selectedLetter, setSelectedLetter] = useState<string | null>(null);
 
   // Filter and search terms
@@ -22,6 +24,11 @@ export default function GlossaryClient({ initialTerms, initialCategories }: Glos
     // Apply category filter
     if (selectedCategory !== 'All') {
       terms = filterTermsByCategory(terms, selectedCategory);
+    }
+    
+    // Apply project filter
+    if (selectedProject !== 'All') {
+      terms = filterTermsByProject(terms, selectedProject);
     }
     
     // Apply search
@@ -36,7 +43,7 @@ export default function GlossaryClient({ initialTerms, initialCategories }: Glos
     }
     
     return terms.sort((a, b) => a.title.localeCompare(b.title));
-  }, [initialTerms, selectedCategory, searchQuery, selectedLetter]);
+  }, [initialTerms, selectedCategory, selectedProject, searchQuery, selectedLetter]);
 
   const availableLetters = useMemo(() => {
     return getAvailableLetters(initialTerms);
@@ -72,6 +79,7 @@ export default function GlossaryClient({ initialTerms, initialCategories }: Glos
         {/* Category Filters */}
         <div className="flex flex-wrap gap-2 items-center">
           <Filter className="h-4 w-4 text-muted-foreground" />
+          <span className="text-sm text-muted-foreground mr-1">Category:</span>
           <button
             onClick={() => setSelectedCategory('All')}
             className={`px-3 py-1 rounded-md text-sm transition-colors ${
@@ -96,6 +104,37 @@ export default function GlossaryClient({ initialTerms, initialCategories }: Glos
             </button>
           ))}
         </div>
+
+        {/* Project Filters */}
+        {initialProjects.length > 0 && (
+          <div className="flex flex-wrap gap-2 items-center">
+            <Filter className="h-4 w-4 text-muted-foreground" />
+            <span className="text-sm text-muted-foreground mr-1">Project:</span>
+            <button
+              onClick={() => setSelectedProject('All')}
+              className={`px-3 py-1 rounded-md text-sm transition-colors ${
+                selectedProject === 'All'
+                  ? 'bg-primary text-primary-foreground'
+                  : 'bg-muted hover:bg-muted/80'
+              }`}
+            >
+              All
+            </button>
+            {initialProjects.map((project) => (
+              <button
+                key={project.slug}
+                onClick={() => setSelectedProject(project.slug)}
+                className={`px-3 py-1 rounded-md text-sm transition-colors ${
+                  selectedProject === project.slug
+                    ? 'bg-primary text-primary-foreground'
+                    : 'bg-muted hover:bg-muted/80'
+                }`}
+              >
+                {project.name} ({project.count})
+              </button>
+            ))}
+          </div>
+        )}
 
         {/* Alphabetical Index */}
         <div className="flex flex-wrap gap-2">
@@ -137,6 +176,7 @@ export default function GlossaryClient({ initialTerms, initialCategories }: Glos
             onClick={() => {
               setSearchQuery('');
               setSelectedCategory('All');
+              setSelectedProject('All');
               setSelectedLetter(null);
             }}
             className="mt-4 text-primary hover:underline"
@@ -150,6 +190,12 @@ export default function GlossaryClient({ initialTerms, initialCategories }: Glos
 }
 
 function TermCard({ term }: { term: GlossaryTermData }) {
+  const projectNames: Record<string, string> = {
+    'meeting-summary': 'Meeting Summary',
+    'landing-page': 'Landing Page',
+    'forms-workflow': 'Forms Workflow',
+  };
+
   return (
     <Link
       href={`/docs/glossary/${term.slug}`}
@@ -159,9 +205,19 @@ function TermCard({ term }: { term: GlossaryTermData }) {
         <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">
           {term.title}
         </h3>
-        <span className="px-2 py-0.5 text-xs rounded bg-muted text-muted-foreground whitespace-nowrap">
-          {term.category}
-        </span>
+        <div className="flex flex-wrap gap-1 justify-end">
+          <span className="px-2 py-0.5 text-xs rounded bg-muted text-muted-foreground whitespace-nowrap">
+            {term.category}
+          </span>
+          {term.projects && term.projects.length > 0 && term.projects.map((projectSlug) => (
+            <span
+              key={projectSlug}
+              className="px-2 py-0.5 text-xs rounded bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 whitespace-nowrap"
+            >
+              {projectNames[projectSlug] || projectSlug}
+            </span>
+          ))}
+        </div>
       </div>
       {term.description && (
         <p className="text-sm text-muted-foreground line-clamp-2">

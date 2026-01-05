@@ -1,0 +1,401 @@
+module.exports = [
+"[externals]/next/dist/shared/lib/no-fallback-error.external.js [external] (next/dist/shared/lib/no-fallback-error.external.js, cjs)", ((__turbopack_context__, module, exports) => {
+
+const mod = __turbopack_context__.x("next/dist/shared/lib/no-fallback-error.external.js", () => require("next/dist/shared/lib/no-fallback-error.external.js"));
+
+module.exports = mod;
+}),
+"[project]/app/layout.tsx [app-rsc] (ecmascript, Next.js Server Component)", ((__turbopack_context__) => {
+
+__turbopack_context__.n(__turbopack_context__.i("[project]/app/layout.tsx [app-rsc] (ecmascript)"));
+}),
+"[project]/app/docs/layout.tsx [app-rsc] (ecmascript, Next.js Server Component)", ((__turbopack_context__) => {
+
+__turbopack_context__.n(__turbopack_context__.i("[project]/app/docs/layout.tsx [app-rsc] (ecmascript)"));
+}),
+"[project]/mdx-components.tsx [app-rsc] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "getMDXComponents",
+    ()=>getMDXComponents
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$fumadocs$2d$ui$2f$dist$2f$mdx$2e$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/node_modules/fumadocs-ui/dist/mdx.server.js [app-rsc] (ecmascript) <locals>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$fumadocs$2d$ui$2f$dist$2f$mdx$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/fumadocs-ui/dist/mdx.js [app-rsc] (ecmascript)");
+;
+function getMDXComponents(components) {
+    return {
+        ...__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$fumadocs$2d$ui$2f$dist$2f$mdx$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"],
+        ...components
+    };
+}
+}),
+"[project]/lib/glossary.ts [app-rsc] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+return __turbopack_context__.a(async (__turbopack_handle_async_dependencies__, __turbopack_async_result__) => { try {
+
+__turbopack_context__.s([
+    "filterTermsByCategory",
+    ()=>filterTermsByCategory,
+    "filterTermsByProject",
+    ()=>filterTermsByProject,
+    "getAllGlossaryTerms",
+    ()=>getAllGlossaryTerms,
+    "getAvailableLetters",
+    ()=>getAvailableLetters,
+    "getGlossaryCategories",
+    ()=>getGlossaryCategories,
+    "getGlossaryProjects",
+    ()=>getGlossaryProjects,
+    "getGlossaryTerm",
+    ()=>getGlossaryTerm,
+    "getRelatedTerms",
+    ()=>getRelatedTerms,
+    "getTermsForProject",
+    ()=>getTermsForProject,
+    "groupTermsAlphabetically",
+    ()=>groupTermsAlphabetically,
+    "searchTerms",
+    ()=>searchTerms,
+    "termToData",
+    ()=>termToData
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$source$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/lib/source.ts [app-rsc] (ecmascript)");
+var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
+    __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$source$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__
+]);
+[__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$source$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__] = __turbopack_async_dependencies__.then ? (await __turbopack_async_dependencies__)() : __turbopack_async_dependencies__;
+;
+function getAllGlossaryTerms() {
+    const allPages = __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$source$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["source"].getPages();
+    const glossaryPages = allPages.filter((page)=>page.slugs[0] === 'glossary' && page.slugs.length > 1);
+    return glossaryPages.map((page)=>{
+        const frontmatter = page.data;
+        return {
+            title: page.data.title,
+            slug: page.slugs[page.slugs.length - 1],
+            category: frontmatter.category || 'Uncategorized',
+            relatedTerms: frontmatter.relatedTerms || [],
+            description: page.data.description || frontmatter.description,
+            projects: frontmatter.projects || [],
+            page
+        };
+    });
+}
+function getGlossaryTerm(slug) {
+    const page = __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$source$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["source"].getPage([
+        'glossary',
+        slug
+    ]);
+    if (!page) return null;
+    const frontmatter = page.data;
+    return {
+        title: page.data.title,
+        slug,
+        category: frontmatter.category || 'Uncategorized',
+        relatedTerms: frontmatter.relatedTerms || [],
+        description: page.data.description || frontmatter.description,
+        projects: frontmatter.projects || [],
+        page
+    };
+}
+function getGlossaryCategories() {
+    const terms = getAllGlossaryTerms();
+    const categoryMap = new Map();
+    terms.forEach((term)=>{
+        const count = categoryMap.get(term.category) || 0;
+        categoryMap.set(term.category, count + 1);
+    });
+    return Array.from(categoryMap.entries()).map(([name, count])=>({
+            name,
+            count
+        })).sort((a, b)=>a.name.localeCompare(b.name));
+}
+function termToData(term) {
+    return {
+        title: term.title,
+        slug: term.slug,
+        category: term.category,
+        relatedTerms: term.relatedTerms,
+        description: term.description,
+        projects: term.projects
+    };
+}
+function filterTermsByCategory(terms, category) {
+    if (!category || category === 'All') return terms;
+    return terms.filter((term)=>term.category === category);
+}
+function searchTerms(terms, query) {
+    if (!query.trim()) return terms;
+    const lowerQuery = query.toLowerCase();
+    return terms.filter((term)=>{
+        const titleMatch = term.title.toLowerCase().includes(lowerQuery);
+        const descMatch = term.description?.toLowerCase().includes(lowerQuery);
+        const categoryMatch = term.category.toLowerCase().includes(lowerQuery);
+        return titleMatch || descMatch || categoryMatch;
+    });
+}
+function groupTermsAlphabetically(terms) {
+    const grouped = new Map();
+    terms.forEach((term)=>{
+        const firstLetter = term.title.charAt(0).toUpperCase();
+        const letter = /[A-Z]/.test(firstLetter) ? firstLetter : '#';
+        if (!grouped.has(letter)) {
+            grouped.set(letter, []);
+        }
+        grouped.get(letter).push(term);
+    });
+    // Sort terms within each letter group
+    grouped.forEach((terms, letter)=>{
+        terms.sort((a, b)=>a.title.localeCompare(b.title));
+    });
+    return grouped;
+}
+function getAvailableLetters(terms) {
+    const grouped = groupTermsAlphabetically(terms);
+    return Array.from(grouped.keys()).sort();
+}
+function filterTermsByProject(terms, project) {
+    if (!project || project === 'All') return terms;
+    return terms.filter((term)=>term.projects?.includes(project));
+}
+function getGlossaryProjects() {
+    const terms = getAllGlossaryTerms();
+    const projectMap = new Map();
+    terms.forEach((term)=>{
+        term.projects?.forEach((project)=>{
+            const count = projectMap.get(project) || 0;
+            projectMap.set(project, count + 1);
+        });
+    });
+    const projectNames = {
+        'meeting-summary': 'Meeting Summary',
+        'landing-page': 'Landing Page',
+        'forms-workflow': 'Forms Workflow'
+    };
+    return Array.from(projectMap.entries()).map(([slug, count])=>({
+            name: projectNames[slug] || slug,
+            slug,
+            count
+        })).sort((a, b)=>a.name.localeCompare(b.name));
+}
+function getTermsForProject(projectSlug) {
+    const allTerms = getAllGlossaryTerms();
+    return allTerms.filter((term)=>term.projects?.includes(projectSlug));
+}
+function getRelatedTerms(term) {
+    if (!term.relatedTerms || term.relatedTerms.length === 0) return [];
+    const allTerms = getAllGlossaryTerms();
+    const related = [];
+    term.relatedTerms.forEach((relatedSlug)=>{
+        const relatedTerm = allTerms.find((t)=>t.slug === relatedSlug);
+        if (relatedTerm) {
+            related.push(relatedTerm);
+        }
+    });
+    return related;
+}
+__turbopack_async_result__();
+} catch(e) { __turbopack_async_result__(e); } }, false);}),
+"[project]/app/docs/projects/[project]/page.tsx [app-rsc] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+return __turbopack_context__.a(async (__turbopack_handle_async_dependencies__, __turbopack_async_result__) => { try {
+
+__turbopack_context__.s([
+    "default",
+    ()=>ProjectPage,
+    "generateMetadata",
+    ()=>generateMetadata,
+    "generateStaticParams",
+    ()=>generateStaticParams
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/rsc/react-jsx-dev-runtime.js [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$source$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/lib/source.ts [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$fumadocs$2d$ui$2f$dist$2f$layouts$2f$docs$2f$page$2f$index$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/node_modules/fumadocs-ui/dist/layouts/docs/page/index.js [app-rsc] (ecmascript) <locals>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$api$2f$navigation$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/node_modules/next/dist/api/navigation.react-server.js [app-rsc] (ecmascript) <locals>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$components$2f$navigation$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/components/navigation.react-server.js [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$mdx$2d$components$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/mdx-components.tsx [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$fumadocs$2d$ui$2f$dist$2f$mdx$2e$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/node_modules/fumadocs-ui/dist/mdx.server.js [app-rsc] (ecmascript) <locals>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$glossary$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/lib/glossary.ts [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.react-server.js [app-rsc] (ecmascript)");
+var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
+    __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$source$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__,
+    __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$glossary$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__
+]);
+[__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$source$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$glossary$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__] = __turbopack_async_dependencies__.then ? (await __turbopack_async_dependencies__)() : __turbopack_async_dependencies__;
+;
+;
+;
+;
+;
+;
+;
+;
+async function ProjectPage(props) {
+    const params = await props.params;
+    const projectSlug = params.project;
+    const page = __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$source$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["source"].getPage([
+        'projects',
+        projectSlug
+    ]);
+    if (!page) (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$components$2f$navigation$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["notFound"])();
+    const MDX = page.data.body;
+    const tools = (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$glossary$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["getTermsForProject"])(projectSlug);
+    const projectNames = {
+        'meeting-summary': 'Meeting Summary',
+        'landing-page': 'Landing Page',
+        'forms-workflow': 'Forms Workflow'
+    };
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$fumadocs$2d$ui$2f$dist$2f$layouts$2f$docs$2f$page$2f$index$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$locals$3e$__["DocsPage"], {
+        toc: page.data.toc,
+        full: page.data.full,
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "mb-4",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
+                    href: "/docs/projects",
+                    className: "text-sm text-muted-foreground hover:text-foreground transition-colors",
+                    children: "← Back to Projects"
+                }, void 0, false, {
+                    fileName: "[project]/app/docs/projects/[project]/page.tsx",
+                    lineNumber: 29,
+                    columnNumber: 9
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/app/docs/projects/[project]/page.tsx",
+                lineNumber: 28,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$fumadocs$2d$ui$2f$dist$2f$layouts$2f$docs$2f$page$2f$index$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$locals$3e$__["DocsTitle"], {
+                children: page.data.title
+            }, void 0, false, {
+                fileName: "[project]/app/docs/projects/[project]/page.tsx",
+                lineNumber: 37,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$fumadocs$2d$ui$2f$dist$2f$layouts$2f$docs$2f$page$2f$index$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$locals$3e$__["DocsDescription"], {
+                children: page.data.description
+            }, void 0, false, {
+                fileName: "[project]/app/docs/projects/[project]/page.tsx",
+                lineNumber: 38,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$fumadocs$2d$ui$2f$dist$2f$layouts$2f$docs$2f$page$2f$index$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$locals$3e$__["DocsBody"], {
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(MDX, {
+                    components: (0, __TURBOPACK__imported__module__$5b$project$5d2f$mdx$2d$components$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["getMDXComponents"])({
+                        a: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$fumadocs$2d$ui$2f$dist$2f$mdx$2e$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$locals$3e$__["createRelativeLink"])(__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$source$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["source"], page)
+                    })
+                }, void 0, false, {
+                    fileName: "[project]/app/docs/projects/[project]/page.tsx",
+                    lineNumber: 41,
+                    columnNumber: 9
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/app/docs/projects/[project]/page.tsx",
+                lineNumber: 40,
+                columnNumber: 7
+            }, this),
+            tools.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "mt-8 pt-8 border-t",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                        className: "text-2xl font-semibold mb-4",
+                        children: "Tools Used"
+                    }, void 0, false, {
+                        fileName: "[project]/app/docs/projects/[project]/page.tsx",
+                        lineNumber: 50,
+                        columnNumber: 11
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4",
+                        children: tools.map((tool)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
+                                href: `/docs/glossary/${tool.slug}`,
+                                className: "block p-4 border rounded-lg hover:border-primary transition-colors group",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                        className: "font-semibold text-lg group-hover:text-primary transition-colors mb-2",
+                                        children: tool.title
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/docs/projects/[project]/page.tsx",
+                                        lineNumber: 58,
+                                        columnNumber: 17
+                                    }, this),
+                                    tool.description && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                        className: "text-sm text-muted-foreground line-clamp-2",
+                                        children: tool.description
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/docs/projects/[project]/page.tsx",
+                                        lineNumber: 62,
+                                        columnNumber: 19
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: "inline-block mt-2 px-2 py-0.5 text-xs rounded bg-muted text-muted-foreground",
+                                        children: tool.category
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/docs/projects/[project]/page.tsx",
+                                        lineNumber: 66,
+                                        columnNumber: 17
+                                    }, this)
+                                ]
+                            }, tool.slug, true, {
+                                fileName: "[project]/app/docs/projects/[project]/page.tsx",
+                                lineNumber: 53,
+                                columnNumber: 15
+                            }, this))
+                    }, void 0, false, {
+                        fileName: "[project]/app/docs/projects/[project]/page.tsx",
+                        lineNumber: 51,
+                        columnNumber: 11
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/app/docs/projects/[project]/page.tsx",
+                lineNumber: 49,
+                columnNumber: 9
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/app/docs/projects/[project]/page.tsx",
+        lineNumber: 27,
+        columnNumber: 5
+    }, this);
+}
+async function generateStaticParams() {
+    return [
+        {
+            project: 'meeting-summary'
+        },
+        {
+            project: 'landing-page'
+        },
+        {
+            project: 'forms-workflow'
+        }
+    ];
+}
+async function generateMetadata(props) {
+    const params = await props.params;
+    const page = __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$source$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["source"].getPage([
+        'projects',
+        params.project
+    ]);
+    if (!page) (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$components$2f$navigation$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["notFound"])();
+    return {
+        title: page.data.title,
+        description: page.data.description,
+        openGraph: {
+            images: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$source$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["getPageImage"])(page).url
+        }
+    };
+}
+__turbopack_async_result__();
+} catch(e) { __turbopack_async_result__(e); } }, false);}),
+"[project]/app/docs/projects/[project]/page.tsx [app-rsc] (ecmascript, Next.js Server Component)", ((__turbopack_context__) => {
+
+__turbopack_context__.n(__turbopack_context__.i("[project]/app/docs/projects/[project]/page.tsx [app-rsc] (ecmascript)"));
+}),
+];
+
+//# sourceMappingURL=%5Broot-of-the-server%5D__b61f584d._.js.map

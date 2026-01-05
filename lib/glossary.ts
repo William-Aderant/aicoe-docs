@@ -8,6 +8,7 @@ export type GlossaryTermData = {
   category: string;
   relatedTerms?: string[];
   description?: string;
+  projects?: string[];
 };
 
 // Full type for server-side use (includes page object)
@@ -37,6 +38,7 @@ export function getAllGlossaryTerms(): GlossaryTerm[] {
       category: frontmatter.category || 'Uncategorized',
       relatedTerms: frontmatter.relatedTerms || [],
       description: page.data.description || frontmatter.description,
+      projects: frontmatter.projects || [],
       page,
     };
   });
@@ -56,6 +58,7 @@ export function getGlossaryTerm(slug: string): GlossaryTerm | null {
     category: frontmatter.category || 'Uncategorized',
     relatedTerms: frontmatter.relatedTerms || [],
     description: page.data.description || frontmatter.description,
+    projects: frontmatter.projects || [],
     page,
   };
 }
@@ -87,6 +90,7 @@ export function termToData(term: GlossaryTerm): GlossaryTermData {
     category: term.category,
     relatedTerms: term.relatedTerms,
     description: term.description,
+    projects: term.projects,
   };
 }
 
@@ -143,6 +147,47 @@ export function groupTermsAlphabetically(terms: GlossaryTermData[]): Map<string,
 export function getAvailableLetters(terms: GlossaryTermData[]): string[] {
   const grouped = groupTermsAlphabetically(terms);
   return Array.from(grouped.keys()).sort();
+}
+
+/**
+ * Filter terms by project
+ */
+export function filterTermsByProject(terms: GlossaryTermData[], project: string): GlossaryTermData[] {
+  if (!project || project === 'All') return terms;
+  return terms.filter((term) => term.projects?.includes(project));
+}
+
+/**
+ * Get all unique projects from glossary terms
+ */
+export function getGlossaryProjects(): { name: string; slug: string; count: number }[] {
+  const terms = getAllGlossaryTerms();
+  const projectMap = new Map<string, number>();
+
+  terms.forEach((term) => {
+    term.projects?.forEach((project) => {
+      const count = projectMap.get(project) || 0;
+      projectMap.set(project, count + 1);
+    });
+  });
+
+  const projectNames: Record<string, string> = {
+    'meeting-summary': 'Meeting Summary',
+    'landing-page': 'Landing Page',
+    'forms-workflow': 'Forms Workflow',
+  };
+
+  return Array.from(projectMap.entries())
+    .map(([slug, count]) => ({ name: projectNames[slug] || slug, slug, count }))
+    .sort((a, b) => a.name.localeCompare(b.name));
+}
+
+/**
+ * Get terms for a specific project
+ */
+export function getTermsForProject(projectSlug: string): GlossaryTerm[] {
+  const allTerms = getAllGlossaryTerms();
+  return allTerms.filter((term) => term.projects?.includes(projectSlug));
 }
 
 /**

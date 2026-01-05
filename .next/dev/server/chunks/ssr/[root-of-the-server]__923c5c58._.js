@@ -21,16 +21,22 @@ return __turbopack_context__.a(async (__turbopack_handle_async_dependencies__, _
 __turbopack_context__.s([
     "filterTermsByCategory",
     ()=>filterTermsByCategory,
+    "filterTermsByProject",
+    ()=>filterTermsByProject,
     "getAllGlossaryTerms",
     ()=>getAllGlossaryTerms,
     "getAvailableLetters",
     ()=>getAvailableLetters,
     "getGlossaryCategories",
     ()=>getGlossaryCategories,
+    "getGlossaryProjects",
+    ()=>getGlossaryProjects,
     "getGlossaryTerm",
     ()=>getGlossaryTerm,
     "getRelatedTerms",
     ()=>getRelatedTerms,
+    "getTermsForProject",
+    ()=>getTermsForProject,
     "groupTermsAlphabetically",
     ()=>groupTermsAlphabetically,
     "searchTerms",
@@ -55,6 +61,7 @@ function getAllGlossaryTerms() {
             category: frontmatter.category || 'Uncategorized',
             relatedTerms: frontmatter.relatedTerms || [],
             description: page.data.description || frontmatter.description,
+            projects: frontmatter.projects || [],
             page
         };
     });
@@ -72,6 +79,7 @@ function getGlossaryTerm(slug) {
         category: frontmatter.category || 'Uncategorized',
         relatedTerms: frontmatter.relatedTerms || [],
         description: page.data.description || frontmatter.description,
+        projects: frontmatter.projects || [],
         page
     };
 }
@@ -93,7 +101,8 @@ function termToData(term) {
         slug: term.slug,
         category: term.category,
         relatedTerms: term.relatedTerms,
-        description: term.description
+        description: term.description,
+        projects: term.projects
     };
 }
 function filterTermsByCategory(terms, category) {
@@ -129,6 +138,34 @@ function groupTermsAlphabetically(terms) {
 function getAvailableLetters(terms) {
     const grouped = groupTermsAlphabetically(terms);
     return Array.from(grouped.keys()).sort();
+}
+function filterTermsByProject(terms, project) {
+    if (!project || project === 'All') return terms;
+    return terms.filter((term)=>term.projects?.includes(project));
+}
+function getGlossaryProjects() {
+    const terms = getAllGlossaryTerms();
+    const projectMap = new Map();
+    terms.forEach((term)=>{
+        term.projects?.forEach((project)=>{
+            const count = projectMap.get(project) || 0;
+            projectMap.set(project, count + 1);
+        });
+    });
+    const projectNames = {
+        'meeting-summary': 'Meeting Summary',
+        'landing-page': 'Landing Page',
+        'forms-workflow': 'Forms Workflow'
+    };
+    return Array.from(projectMap.entries()).map(([slug, count])=>({
+            name: projectNames[slug] || slug,
+            slug,
+            count
+        })).sort((a, b)=>a.name.localeCompare(b.name));
+}
+function getTermsForProject(projectSlug) {
+    const allTerms = getAllGlossaryTerms();
+    return allTerms.filter((term)=>term.projects?.includes(projectSlug));
 }
 function getRelatedTerms(term) {
     if (!term.relatedTerms || term.relatedTerms.length === 0) return [];
@@ -202,14 +239,16 @@ var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
 function GlossaryPage() {
     const allTerms = (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$glossary$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["getAllGlossaryTerms"])();
     const categories = (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$glossary$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["getGlossaryCategories"])();
+    const projects = (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$glossary$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["getGlossaryProjects"])();
     // Convert to serializable data (strip out page objects)
     const termsData = allTerms.map(__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$glossary$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["termToData"]);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$docs$2f$glossary$2f$glossary$2d$client$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
         initialTerms: termsData,
-        initialCategories: categories
+        initialCategories: categories,
+        initialProjects: projects
     }, void 0, false, {
         fileName: "[project]/app/docs/glossary/page.tsx",
-        lineNumber: 11,
+        lineNumber: 12,
         columnNumber: 10
     }, this);
 }

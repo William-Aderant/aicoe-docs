@@ -66,6 +66,10 @@
   :root, :host {
     --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --color-blue-100: #dbeafe;
+    --color-blue-200: #bedbff;
+    --color-blue-800: #193cb8;
+    --color-blue-900: #1c398e;
     --color-black: #000;
     --spacing: .25rem;
     --breakpoint-sm: 40rem;
@@ -147,6 +151,10 @@
 
   @supports (color: lab(0% 0 0)) {
     :root, :host {
+      --color-blue-100: lab(92.0301% -2.24757 -11.6453);
+      --color-blue-200: lab(86.15% -4.04379 -21.0797);
+      --color-blue-800: lab(30.2514% 27.7853 -70.2699);
+      --color-blue-900: lab(26.1542% 15.7545 -51.5504);
       --color-fd-info: lab(54.1736% 13.3369 -74.6839);
       --color-fd-warning: lab(72.7183% 31.8672 97.9407);
       --color-fd-error: lab(55.4814% 75.0732 48.8528);
@@ -1174,6 +1182,10 @@
     margin-top: calc(var(--spacing) * 1);
   }
 
+  .mt-2 {
+    margin-top: calc(var(--spacing) * 2);
+  }
+
   .mt-4 {
     margin-top: calc(var(--spacing) * 4);
   }
@@ -1188,6 +1200,10 @@
 
   .mt-px {
     margin-top: 1px;
+  }
+
+  .mr-1 {
+    margin-right: calc(var(--spacing) * 1);
   }
 
   .-mb-px {
@@ -1261,6 +1277,10 @@
 
   .inline {
     display: inline;
+  }
+
+  .inline-block {
+    display: inline-block;
   }
 
   .inline-flex {
@@ -1835,6 +1855,10 @@
     background-color: var(--shiki-light-bg);
   }
 
+  .bg-blue-100 {
+    background-color: var(--color-blue-100);
+  }
+
   .bg-fd-accent {
     background-color: var(--color-fd-accent);
   }
@@ -2210,6 +2234,10 @@
 
   .text-\(--callout-color\) {
     color: var(--callout-color);
+  }
+
+  .text-blue-800 {
+    color: var(--color-blue-800);
   }
 
   .text-fd-accent-foreground {
@@ -2658,6 +2686,12 @@
 
   .empty\:hidden:empty {
     display: none;
+  }
+
+  @media (hover: hover) {
+    .hover\:bg-blue-200:hover {
+      background-color: var(--color-blue-200);
+    }
   }
 
   @media (hover: hover) {
@@ -3220,6 +3254,20 @@
 
   .dark\:bg-\(--shiki-dark-bg\):where(.dark, .dark *) {
     background-color: var(--shiki-dark-bg);
+  }
+
+  .dark\:bg-blue-900:where(.dark, .dark *) {
+    background-color: var(--color-blue-900);
+  }
+
+  .dark\:text-blue-200:where(.dark, .dark *) {
+    color: var(--color-blue-200);
+  }
+
+  @media (hover: hover) {
+    .dark\:hover\:bg-blue-800:where(.dark, .dark *):hover {
+      background-color: var(--color-blue-800);
+    }
   }
 
   :is(#nd-docs-layout:has(.layout\:\[--fd-header-height\:--spacing\(14\)\]), #nd-notebook-layout:has(.layout\:\[--fd-header-height\:--spacing\(14\)\]), #nd-home-layout:has(.layout\:\[--fd-header-height\:--spacing\(14\)\])) {
