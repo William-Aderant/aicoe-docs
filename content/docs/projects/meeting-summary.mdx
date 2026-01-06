@@ -5,24 +5,76 @@ description: AI-powered meeting transcription and summarization project
 
 # Meeting Summary
 
-This project focuses on developing an AI-powered solution for transcribing and summarizing meetings automatically.
+A full-stack web application that automatically processes meeting videos to extract transcripts, generate summaries, and identify unique slides using multimodal AI.
+
+**Repository:** [meeting_summary_demo](https://github.com/William-Aderant/meeting_summary_demo)
 
 ## Overview
 
-The Meeting Summary project aims to provide automated transcription and intelligent summarization of meetings, making it easier to capture key points and action items.
+The Meeting Summary project is a comprehensive solution for processing meeting videos. It automatically extracts transcripts, generates intelligent summaries, and identifies unique slides from video recordings. The application uses a combination of speech recognition, AI summarization, and computer vision technologies to provide a complete meeting analysis solution.
+
+## Architecture
+
+The application follows a modern full-stack architecture:
+
+```
+Frontend (Next.js) → Backend (FastAPI) → Processing Pipeline
+  ├─ Video Upload
+  ├─ Status Polling
+  └─ Results Display
+```
+
+### Processing Pipeline
+
+1. **Audio Extraction** - Uses FFmpeg to extract audio from video files
+2. **Scene Detection** - AWS Rekognition identifies scene changes
+3. **Frame Extraction** - FFmpeg extracts frames at regular intervals
+4. **Slide Fingerprinting** - CLIP embeddings for visual similarity detection
+5. **Deduplication** - Automatic removal of repeated slides using OCR text matching
+6. **Transcription** - Deepgram API provides high-quality speech-to-text with word-level timestamps
+7. **Summarization** - Claude 3.5 Sonnet via Amazon Bedrock generates executive summaries, decisions, and action items
+8. **Results Assembly** - Final results compiled and returned to frontend
+
+## Key Features
+
+- **Automated Transcription**: Uses Deepgram API for high-quality speech-to-text conversion with word-level timestamps
+- **Intelligent Summarization**: Claude 3.5 Sonnet via Amazon Bedrock generates:
+  - Executive summaries
+  - Key decisions
+  - Action items
+- **Slide Detection & Deduplication**:
+  - Scene detection using AWS Rekognition
+  - CLIP embeddings for visual similarity matching
+  - OCR text extraction for content matching
+  - Automatic deduplication of repeated slides
+- **Modern UI**: Next.js frontend with drag-and-drop upload and real-time status updates
+- **Multi-format Support**: Supports MP4, MOV, AVI, MKV, WebM, and M4V video formats
+
+## Technology Stack
+
+- **Frontend**: Next.js with TypeScript
+- **Backend**: FastAPI (Python)
+- **AI Services**:
+  - Deepgram (Speech-to-text transcription)
+  - Amazon Bedrock with Claude 3.5 Sonnet (Summarization)
+  - AWS Rekognition (Scene detection and OCR)
+- **Storage**: AWS S3 for video storage
+- **Processing**: FFmpeg for audio/video processing, CLIP for image embeddings
+
+## Use Cases
+
+- Meeting documentation and archival
+- Executive briefing generation
+- Action item tracking
+- Slide deck extraction from recorded presentations
+- Meeting analysis and insights
+- Compliance and record-keeping
+
+## Project Status
+
+*Status: Active Development*
 
 ## Tools Used
 
 The tools used in this project are automatically listed below based on glossary entries.
-
-## Project Status
-
-*Status: In Progress*
-
-## Key Features
-
-- Real-time meeting transcription
-- AI-powered summarization
-- Action item extraction
-- Integration with meeting platforms
 

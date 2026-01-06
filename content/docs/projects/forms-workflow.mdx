@@ -5,24 +5,72 @@ description: Automated form processing and workflow management project
 
 # Forms Workflow
 
-This project focuses on automating form processing and creating efficient workflows for handling form submissions.
+An automated web scraping and OCR processing system that extracts court forms from websites, processes PDFs with AWS Textract, and generates annotated images with bounding boxes for form analysis.
+
+**Repository:** [forms_workflow_demo](https://github.com/William-Aderant/forms_workflow_demo)
 
 ## Overview
 
-The Forms Workflow project aims to streamline form processing, automate data handling, and create intelligent workflows for form submissions.
+The Forms Workflow project automates the process of discovering, extracting, and processing legal forms from court websites. The system uses web scraping to find PDF forms, processes them with OCR technology to extract text, and creates annotated visualizations showing where text was detected in the documents.
+
+## Architecture
+
+The application consists of:
+
+- **Frontend**: Next.js dashboard for monitoring and viewing results
+- **Backend**: FastAPI service handling scraping and OCR processing
+- **Processing Pipeline**:
+  1. Web scraping with Firecrawl to discover form PDFs
+  2. PDF download and conversion to images
+  3. OCR processing with AWS Textract
+  4. Annotated image generation with bounding boxes
+  5. Results storage and API serving
+
+## Key Features
+
+- **Automated Web Scraping**: Uses Firecrawl to scrape court forms websites and extract PDF links
+- **PDF Processing**: Converts PDFs to images and processes them with AWS Textract OCR
+- **Annotated Visualizations**: Generates PNG images with OCR bounding boxes drawn, showing exactly where text was detected
+- **Rate Limiting**: Built-in rate limiting (50 calls combined for Firecrawl and Textract) to control costs
+- **Dashboard Interface**: Next.js frontend providing:
+  - Real-time scraping status
+  - Form listing and details
+  - OCR results display
+  - Annotated image gallery
+  - Rate limit monitoring
+- **Metadata Export**: JSON files containing bounding box coordinates and extracted text
+
+## Technology Stack
+
+- **Frontend**: Next.js with TypeScript
+- **Backend**: FastAPI (Python)
+- **Web Scraping**: Firecrawl API
+- **OCR**: AWS Textract
+- **PDF Processing**: poppler-utils for PDF to image conversion
+- **Image Processing**: PIL/Pillow for annotation drawing
+
+## Use Cases
+
+- Legal form discovery and analysis
+- Court document processing
+- Form digitization projects
+- Document automation workflows
+- OCR quality assessment and visualization
+- Legal document management systems
+
+## Output
+
+The system generates:
+
+- **OCR Results**: Markdown text extracted from PDFs
+- **Annotated Images**: PNG images with OCR bounding boxes drawn (saved in `output/images/`)
+- **JSON Metadata**: Bounding box coordinates and text for each annotated image
+
+## Project Status
+
+*Status: Active Development*
 
 ## Tools Used
 
 The tools used in this project are automatically listed below based on glossary entries.
-
-## Project Status
-
-*Status: In Progress*
-
-## Key Features
-
-- Automated form processing
-- Workflow automation
-- Data integration
-- Notification systems
 
